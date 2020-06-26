@@ -32,6 +32,8 @@ func mjpegCapture() {
       continue
     }
 
+    gocv.CvtColor(img, &img, 6)
+
     buf, _ := gocv.IMEncode(".jpg", img)
     stream.UpdateJPEG(buf)
   }
@@ -54,7 +56,7 @@ func main(){
 
   webcam.Set(3, float64(width))
   webcam.Set(4, float64(height))
-  // webcam.Set(5, fpsValue) // fps
+  // webcam.Set(19, 1) // fps
 
   stream = mjpeg.NewStream()
 

@@ -22,7 +22,7 @@ var (
 )
 
 func faceDetect() {
-  xmlFile := "assets/haarcascade_frontalface_alt.xml"
+  xmlFile := "assets/cascade.xml"
 
   img := gocv.NewMat()
   defer img.Close()
